@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>List profiles</title>
+</head>
+
+<body>
+    {% load thumbnail %}
+    <div>
+        {% for profile in object_list %}
+            <li>
+                <img src="{{profile.profile_picture|thumbnail_url:'profile_picture' }}" alt="Thumbnail picture">
+                <a href="update/{{profile.name}}">{{ profile.name }}</a>
+            </li>
+        {% endfor %}
+        <li><a href="create">New profile</a></li>
+    </div>
+
+</body>
+
+</html>
